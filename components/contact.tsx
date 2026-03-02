@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-warm-50">
+    <section id="contact" className="py-20 bg-cool-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 h-full bg-white border-warm-200">
+            <Card className="p-8 h-full bg-white border-cool-200">
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Wyślij wiadomość
               </h3>
@@ -110,7 +110,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Jan Kowalski"
-                    className="bg-warm-50 border-warm-200 focus:border-primary"
+                    className="bg-cool-50 border-cool-200 focus:border-primary"
                   />
                 </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="jan@przyklad.pl"
-                    className="bg-warm-50 border-warm-200 focus:border-primary"
+                    className="bg-cool-50 border-cool-200 focus:border-primary"
                   />
                 </div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+48 123 456 789"
-                    className="bg-warm-50 border-warm-200 focus:border-primary"
+                    className="bg-cool-50 border-cool-200 focus:border-primary"
                   />
                 </div>
 
@@ -157,7 +157,7 @@ export default function Contact() {
                     required
                     rows={5}
                     placeholder="Opisz swoje potrzeby..."
-                    className="bg-warm-50 border-warm-200 focus:border-primary resize-none"
+                    className="bg-cool-50 border-cool-200 focus:border-primary resize-none"
                   />
                 </div>
 
@@ -187,7 +187,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Card className="p-8 bg-white border-warm-200">
+            <Card className="p-8 bg-white border-cool-200">
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Informacje kontaktowe
               </h3>
@@ -245,7 +245,7 @@ export default function Contact() {
             </Card>
 
             {/* Google Maps */}
-            <Card className="overflow-hidden border-warm-200">
+            <Card className="overflow-hidden border-cool-200">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5295933256823!2d${companyData.mapCoordinates.lng}!3d${companyData.mapCoordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${companyData.mapCoordinates.lat}!2z${companyData.mapCoordinates.lng}!5e0!3m2!1spl!2spl!4v1234567890`}
                 width="100%"

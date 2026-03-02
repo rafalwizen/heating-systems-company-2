@@ -40,7 +40,7 @@ export default function Gallery() {
             className={`px-6 py-3 rounded-full font-medium transition-all ${
               selectedCategory === category
                 ? 'bg-primary text-primary-foreground shadow-lg'
-                : 'bg-white text-foreground hover:bg-warm-100 border border-warm-200'
+                : 'bg-white text-foreground hover:bg-cool-100 border border-cool-200'
             }`}
           >
             {category}
@@ -58,7 +58,7 @@ export default function Gallery() {
             transition={{ duration: 0.4, delay: 0.1 * index }}
           >
             <Card
-              className="overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-warm-200"
+              className="overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-cool-200"
               onClick={() => setSelectedRealization(realization)}
             >
               {/* Image */}
@@ -104,13 +104,13 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-warm-200">
+              <div className="flex items-center justify-between p-4 border-b border-cool-200">
                 <span className="text-sm font-medium text-muted-foreground">
                   {selectedRealization.category}
                 </span>
                 <button
                   onClick={() => setSelectedRealization(null)}
-                  className="p-2 hover:bg-warm-100 rounded-full transition-colors"
+                  className="p-2 hover:bg-cool-100 rounded-full transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -136,7 +136,7 @@ export default function Gallery() {
               </div>
 
               {/* Navigation */}
-              <div className="flex items-center justify-between p-4 border-t border-warm-200 bg-warm-50">
+              <div className="flex items-center justify-between p-4 border-t border-cool-200 bg-cool-50">
                 <button
                   onClick={handlePrevious}
                   className="flex items-center gap-2 px-4 py-2 hover:bg-white rounded-lg transition-colors"

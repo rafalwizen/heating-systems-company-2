@@ -33,7 +33,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 * index }}
             >
-              <Card className="p-6 h-full bg-warm-50 border-warm-200 hover:shadow-lg transition-shadow">
+              <Card className="p-6 h-full bg-cool-50 border-cool-200 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (

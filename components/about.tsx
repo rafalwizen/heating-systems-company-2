@@ -62,7 +62,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 * index }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-warm-50 border-warm-200">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-cool-50 border-cool-200">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="h-7 w-7 text-primary" />
@@ -86,7 +86,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-3xl mx-auto"
         >
-          <Card className="p-8 bg-gradient-to-br from-primary to-primary-dark text-primary-foreground border-0">
+          <Card className="p-8 bg-gradient-to-br from-primary to-secondary text-primary-foreground border-0">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">Nasza misja</h3>
               <p className="text-lg opacity-90 leading-relaxed">

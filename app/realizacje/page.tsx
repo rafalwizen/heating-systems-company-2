@@ -12,7 +12,7 @@ export default function RealizacjePage() {
   const categories = Array.from(new Set(realizations.map((r) => r.category)));
 
   return (
-    <div className="min-h-screen bg-warm-50">
+    <div className="min-h-screen bg-cool-50">
       {/* Header with Video Background */}
       <section className="relative py-20 overflow-hidden">
         {/* Background Video */}

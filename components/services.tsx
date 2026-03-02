@@ -16,7 +16,7 @@ const iconMap = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-warm-50">
+    <section id="services" className="py-20 bg-cool-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-warm-200 group">
+                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-cool-200 group">
                   <div className="flex flex-col h-full">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       {Icon && <Icon className="h-8 w-8 text-primary" />}
