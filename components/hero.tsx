@@ -4,12 +4,46 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Flame } from 'lucide-react';
 import Link from 'next/link';
+import { useRef, useEffect } from 'react';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Set to the end of the video initially
+    video.currentTime = video.duration || 0;
+
+    let animationFrameId: number;
+
+    const playBackwards = () => {
+      if (video.currentTime > 0) {
+        video.currentTime -= 0.03; // Adjust this value to control playback speed
+        animationFrameId = requestAnimationFrame(playBackwards);
+      } else {
+        // Pause when reaching the beginning
+        video.pause();
+      }
+    };
+
+    video.addEventListener('loadedmetadata', () => {
+      video.currentTime = video.duration;
+    });
+
+    // Start playing backwards
+    animationFrameId = requestAnimationFrame(playBackwards);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
@@ -45,17 +79,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold text-foreground mb-6"
+            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            style={{ textShadow: '0 6px 20px rgba(0, 0, 0, 0.9), 0 3px 6px rgba(0, 0, 0, 0.7)' }}
           >
             Profesjonalne
-            <span className="block text-primary mt-2">rozwiązania grzewcze</span>
+            <span className="block text-white mt-2" style={{ textShadow: '0 6px 20px rgba(0, 0, 0, 0.9), 0 3px 6px rgba(0, 0, 0, 0.7)' }}>
+              rozwiązania grzewcze
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto"
+            style={{ textShadow: '0 4px 16px rgba(0, 0, 0, 0.9)' }}
           >
             Montaż kotłów, serwis, modernizacja instalacji i pompy ciepła.
             Ponad 15 lat doświadczenia w branży.
@@ -105,10 +143,10 @@ export default function Hero() {
                 transition={{ delay: 0.8 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ textShadow: '0 4px 16px rgba(0, 0, 0, 0.9)' }}>
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white" style={{ textShadow: '0 3px 12px rgba(0, 0, 0, 0.9)' }}>{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
