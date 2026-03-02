@@ -13,9 +13,25 @@ export default function RealizacjePage() {
 
   return (
     <div className="min-h-screen bg-warm-50">
-      {/* Header */}
-      <section className="py-20 bg-white border-b border-warm-200">
-        <div className="container mx-auto px-4">
+      {/* Header with Video Background */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={(e) => e.currentTarget.pause()}
+        >
+          <source src="/images/relizations_main.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -23,22 +39,22 @@ export default function RealizacjePage() {
             className="max-w-4xl mx-auto text-center"
           >
             <Link href="/">
-              <Button variant="ghost" className="mb-6 text-primary hover:text-primary/80">
+              <Button variant="ghost" className="mb-6 text-white hover:text-white/80">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Powrót do strony głównej
               </Button>
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Nasze realizacje
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Zobacz przykłady naszych projektów i zrealizowanych instalacji
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
                 <span
                   key={category}
-                  className="px-4 py-2 bg-warm-100 text-warm-800 rounded-full text-sm font-medium"
+                  className="px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium"
                 >
                   {category}
                 </span>

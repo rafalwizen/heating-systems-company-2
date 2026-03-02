@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { realizations } from '@/lib/data';
-import { X, ChevronLeft, ChevronRight, Tag } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Wszystkie');
@@ -61,9 +61,13 @@ export default function Gallery() {
               className="overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-warm-200"
               onClick={() => setSelectedRealization(realization)}
             >
-              {/* Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-warm-200 to-warm-300 flex items-center justify-center relative">
-                <Tag className="h-12 w-12 text-warm-600 opacity-50" />
+              {/* Image */}
+              <div className="aspect-video relative overflow-hidden">
+                <img
+                  src={realization.image}
+                  alt={realization.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
                 <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
                   {realization.category}
                 </div>
@@ -113,8 +117,12 @@ export default function Gallery() {
               </div>
 
               {/* Image */}
-              <div className="aspect-video bg-gradient-to-br from-warm-200 to-warm-300 flex items-center justify-center">
-                <Tag className="h-24 w-24 text-warm-600 opacity-50" />
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={selectedRealization.image}
+                  alt={selectedRealization.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Content */}

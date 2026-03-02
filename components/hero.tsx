@@ -7,33 +7,21 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-warm-50 via-white to-warm-100 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <pattern
-              id="grid"
-              width="10"
-              height="10"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 10 0 L 0 0 0 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={(e) => e.currentTarget.pause()}
+      >
+        <source src="/images/hero_main.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/40" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
