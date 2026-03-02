@@ -12,7 +12,7 @@ const contactSchema = z.object({
 
 // Initialize Resend with API key from environment
 const resend = new Resend(process.env.RESEND_API_KEY);
-const contactEmail = process.env.CONTACT_EMAIL || 'kontakt@budlepserwis.pl';
+const contactEmail = process.env.CONTACT_EMAIL || 'kontakt@twojserwis.pl';
 
 export async function POST(request: NextRequest) {
   try {

@@ -27,7 +27,7 @@ export const companyData = {
   description: 'Zajmujemy się kompleksowymi usługami związanymi z ogrzewaniem domów i budynków użyteczności publicznej. Ponad 15 lat doświadczenia pozwala nam świadczyć usługi na najwyższym poziomie.',
   address: 'ul. Ciepła 12, 00-001 Warszawa',
   phone: '+48 123 456 789',
-  email: 'kontakt@budlepserwis.pl',
+  email: 'kontakt@twojserwis.pl',
   workingHours: 'Pon-Pt: 8:00-18:00, Sob: 9:00-14:00',
   mapCoordinates: {
     lat: 52.2297,
