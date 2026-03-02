@@ -74,7 +74,7 @@ export default function Services() {
             Potrzebujesz pomocy z czymś innym?
           </p>
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-flex items-center text-primary font-medium hover:underline"
           >
             Skontaktuj się z nami

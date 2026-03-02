@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="#contact">
+            <Link href="/#contact">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6"
@@ -76,7 +76,7 @@ export default function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/realizacje">
+            <Link href="/realizations">
               <Button
                 size="lg"
                 variant="outline"

@@ -6,10 +6,10 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { name: 'O nas', href: '#about' },
-  { name: 'Usługi', href: '#services' },
-  { name: 'Opinie', href: '#testimonials' },
-  { name: 'Kontakt', href: '#contact' },
+  { name: 'O nas', href: '/#about' },
+  { name: 'Usługi', href: '/#services' },
+  { name: 'Opinie', href: '/#testimonials' },
+  { name: 'Kontakt', href: '/#contact' },
 ];
 
 export default function Navigation() {
@@ -34,7 +34,7 @@ export default function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Link href="/realizacje">
+          <Link href="/realizations">
             <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               Realizacje
             </Button>
@@ -70,7 +70,7 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="/realizacje"
+              href="/realizations"
               onClick={() => setIsMenuOpen(false)}
             >
               <Button variant="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-2">
