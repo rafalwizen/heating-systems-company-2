@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BUDLEPSERWIS - Profesjonalne rozwiązania grzewcze",
-  description: "Firma BUDLEPSERWIS zajmuje się kompleksowymi usługami związanymi z ogrzewaniem. Montaż kotłów, serwis, modernizacja instalacji, pompy ciepła.",
+  title: "TWÓJSERWIS - Profesjonalne rozwiązania grzewcze",
+  description: "Firma TWÓJSERWIS zajmuje się kompleksowymi usługami związanymi z ogrzewaniem. Montaż kotłów, serwis, modernizacja instalacji, pompy ciepła.",
 };
 
 export default function RootLayout({

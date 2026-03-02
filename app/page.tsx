@@ -17,7 +17,7 @@ export default function Home() {
       <footer className="py-8 bg-dark-900 text-dark-800">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            © {new Date().getFullYear()} BUDLEPSERWIS. Wszelkie prawa zastrzeżone.
+            © {new Date().getFullYear()} TWÓJSERWIS. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </footer>

@@ -20,7 +20,7 @@ export default function Navigation() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <Flame className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold text-foreground">BUDLEPSERWIS</span>
+          <span className="text-xl font-bold text-foreground">TWÓJSERWIS</span>
         </Link>
 
         {/* Desktop Navigation */}

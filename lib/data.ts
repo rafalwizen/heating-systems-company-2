@@ -22,7 +22,7 @@ export interface Testimonial {
 }
 
 export const companyData = {
-  name: 'BUDLEPSERWIS',
+  name: 'TWÓJSERWIS',
   tagline: 'Profesjonalne rozwiązania grzewcze dla Twojego domu',
   description: 'Zajmujemy się kompleksowymi usługami związanymi z ogrzewaniem domów i budynków użyteczności publicznej. Ponad 15 lat doświadczenia pozwala nam świadczyć usługi na najwyższym poziomie.',
   address: 'ul. Ciepła 12, 00-001 Warszawa',

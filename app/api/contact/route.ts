@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'BUDLEPSERWIS <onboarding@resend.dev>',
+      from: 'TWÓJSERWIS <onboarding@resend.dev>',
       to: [contactEmail],
       subject: `Nowa wiadomość z formularza kontaktowego - ${validatedData.name}`,
       html: `
