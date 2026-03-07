@@ -34,7 +34,7 @@ export default function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Link href="/realizations">
+          <Link href="/#realizations">
             <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               Realizacje
             </Button>
@@ -70,7 +70,7 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="/realizations"
+              href="/#realizations"
               onClick={() => setIsMenuOpen(false)}
             >
               <Button variant="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-2">
