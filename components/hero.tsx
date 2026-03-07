@@ -13,9 +13,6 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Set to the end of the video initially
-    video.currentTime = video.duration || 0;
-
     let animationFrameId: number;
 
     const playBackwards = () => {
@@ -28,12 +25,23 @@ export default function Hero() {
       }
     };
 
-    video.addEventListener('loadedmetadata', () => {
-      video.currentTime = video.duration;
-    });
+    const initializeVideo = () => {
+      // Set to the end of the video
+      video.currentTime = video.duration || 0;
+      // Start playing backwards immediately
+      animationFrameId = requestAnimationFrame(playBackwards);
+    };
 
-    // Start playing backwards
-    animationFrameId = requestAnimationFrame(playBackwards);
+    // Wait for video to be ready
+    if (video.readyState >= 2) {
+      // Video is already ready
+      initializeVideo();
+    } else {
+      // Wait for video to be ready
+      video.addEventListener('canplay', () => {
+        initializeVideo();
+      }, { once: true });
+    }
 
     return () => {
       cancelAnimationFrame(animationFrameId);
@@ -45,11 +53,9 @@ export default function Hero() {
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
         muted
         playsInline
         preload="auto"
-        onEnded={(e) => e.currentTarget.pause()}
       >
         <source src="/images/hero_main.mp4" type="video/mp4" />
       </video>
