@@ -10,12 +10,22 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Wiadomość musi mieć minimum 10 znaków'),
 });
 
-// Initialize Resend with API key from environment
-const resend = new Resend(process.env.RESEND_API_KEY);
 const contactEmail = process.env.CONTACT_EMAIL || 'kontakt@twojserwis.pl';
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Resend API key is configured
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Resend API key is not configured');
+      return NextResponse.json(
+        { error: 'Usługa kontaktowa jest tymczasowo niedostępna' },
+        { status: 503 }
+      );
+    }
+
+    // Initialize Resend with API key
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     // Parse and validate request body
     const body = await request.json();
     const validatedData = contactSchema.parse(body);

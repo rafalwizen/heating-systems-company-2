@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { services } from '@/lib/data';
 import { Flame, Wrench, RefreshCw, Thermometer, Sun, Droplets } from 'lucide-react';
@@ -73,12 +74,12 @@ export default function Services() {
           <p className="text-muted-foreground mb-4">
             Potrzebujesz pomocy z czymś innym?
           </p>
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center text-primary font-medium hover:underline"
           >
             Skontaktuj się z nami
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
