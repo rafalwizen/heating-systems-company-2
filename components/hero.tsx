@@ -10,9 +10,25 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Detect mobile device
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as unknown as { opera?: string }).opera || '';
+      return /android|ipad|iphone|ipod/i.test(userAgent);
+    };
+
+    const mobile = checkMobile();
+
     const video = videoRef.current;
     if (!video) return;
 
+    // On mobile, just show first frame
+    if (mobile) {
+      video.currentTime = 0;
+      video.pause();
+      return;
+    }
+
+    // On desktop, play backwards like before
     let animationFrameId: number;
 
     const playBackwards = () => {
@@ -56,6 +72,7 @@ export default function Hero() {
         muted
         playsInline
         preload="auto"
+        webkit-playsinline
       >
         <source src="/images/hero_main.mp4" type="video/mp4" />
       </video>
