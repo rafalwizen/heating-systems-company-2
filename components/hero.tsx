@@ -10,25 +10,10 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Detect mobile device
-    const checkMobile = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || (window as unknown as { opera?: string }).opera || '';
-      return /android|ipad|iphone|ipod/i.test(userAgent);
-    };
-
-    const mobile = checkMobile();
-
     const video = videoRef.current;
     if (!video) return;
 
-    // On mobile, just show first frame
-    if (mobile) {
-      video.currentTime = 0;
-      video.pause();
-      return;
-    }
-
-    // On desktop, play backwards like before
+    // Play backwards like before
     let animationFrameId: number;
 
     const playBackwards = () => {
@@ -63,16 +48,25 @@ export default function Hero() {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background Image - Mobile only */}
+      <div className="absolute inset-0 w-full h-full object-cover md:hidden">
+        <img
+          src="/images/hero.png"
+          alt="Hero background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Background Video - Desktop only */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
         muted
         playsInline
         preload="auto"
-        webkit-playsinline
       >
         <source src="/images/hero_main.mp4" type="video/mp4" />
       </video>
